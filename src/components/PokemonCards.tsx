@@ -8,19 +8,22 @@ import { PokemonCard } from "../interfaces/PokemonCard";
 const AllCardsDiv = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    justify-content: space-evenly;
     background-color: #E4A0B7;
 `;
 
 const SingleCardDiv = styled.div`
-    max-width: 25%;
-    margin: 15px;
-    padding: 20px;
-    border: 2px solid #cc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    padding: 2%;
+    margin: 1%;
+    border: 2px solid #A7C7E7;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    font: italic small-caps bold calc(2px + 1vw) "Rowdies";
     font-family: "Rowdies", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     text-align: center;
     text-transform: uppercase;
@@ -33,6 +36,22 @@ const SingleCardDiv = styled.div`
     p {
         font-size: 1rem;
         color: #666;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media screen and (max-width: 750px) {
+        width: 45%; /* Cards take up more width on smaller screens */
+        font-size: calc(1.5px + 1vw);
+    }
+
+    /* Media Query for very small screens */
+    @media screen and (max-width: 480px) {
+        width: 90%; /* Cards take up almost the entire width on mobile */
+        font-size: calc(1px + 1vw);
     }
 `;
 
