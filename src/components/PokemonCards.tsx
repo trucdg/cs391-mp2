@@ -41,8 +41,13 @@ export default function PokemonCards( props : {data: PokemonCard[]} ) {
 
     console.log(props)
 
+    if (props.data.length == 0) {
+        return <p>Loading cards ... Please give it 30 seconds!!!</p>
+    }
+
     // only take the first 20 items instead of the array of the entire 250 pokemoncards
     let card_list = props.data.slice(0,20) ;
+
 
     console.log (card_list)
 
